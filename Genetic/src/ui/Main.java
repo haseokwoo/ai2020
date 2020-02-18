@@ -12,6 +12,7 @@ public class Main {
 		Population p = new Population(POPULATION_SIZE);
 		for (int n = 0; n < NUMBER_OF_GENERATIONS; ++n) {
 			p.spawnNextGeneration();
+			System.out.println("Generation " + n + " + Best Fitness: " + p.getBestFitness());
 		}
 		System.out.println("The best fitness index is " + p.getBestFitness());
 		System.out.println("This occurs at " + p.getBestFitnessInput());
