@@ -15,7 +15,7 @@ public class Main {
 			System.out.println("Generation " + n + " + Best Fitness: " + p.getBestFitness());
 		}
 		System.out.println("The best fitness index is " + p.getBestFitness());
-		System.out.println("This occurs at " + p.getBestFitnessInput());
+		System.out.println("This occurs at x = " + p.getBestFitnessInput1() + " and y = " + p.getBestFitnessInput2());
 	}
 
 }

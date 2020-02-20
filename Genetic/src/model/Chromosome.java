@@ -5,7 +5,7 @@ import java.util.Random;
 public class Chromosome {
 	public static final int MAX_VALUE = 10;
 	public static final double MUTATION_RATE = .1;
-	public static final int NUMBER_OF_GENES = 10;
+	public static final int NUMBER_OF_GENES = 30;
 	private boolean[] genes = new boolean[NUMBER_OF_GENES];
 
 	public boolean[] getGenes() {

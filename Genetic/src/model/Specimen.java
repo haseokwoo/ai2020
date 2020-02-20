@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Specimen implements Comparable<Specimen> {
 	List<Chromosome> chromosomes = new ArrayList<>();
-	public static final int NUMBER_OF_CHROMOSOMES = 1;
+	public static final int NUMBER_OF_CHROMOSOMES = 2; //It was 1. We change this from 1 to 2.
 	
 	public Specimen() {
 		for (int n = 0; n < NUMBER_OF_CHROMOSOMES; ++n) {
@@ -31,7 +31,9 @@ public class Specimen implements Comparable<Specimen> {
 	}
 
 	public double getFitnessIndex() {
-		return (Math.sin(chromosomes.get(0).getValue()) + 1.0) / 2.0;
+		return (Math.sin(chromosomes.get(0).getValue()) * Math.sin(chromosomes.get(1).getValue()) /*+ 1.0*/) /*/ 2.0*/;
+		
+		//Find out which input generate the highest output.
 	}
 
 	@Override

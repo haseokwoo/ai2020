@@ -26,8 +26,12 @@ public class Population {
 				.getFitnessIndex();
 	}
 
-	public double getBestFitnessInput() {
+	public double getBestFitnessInput1() {
 		return specimens.stream().max(Comparator.naturalOrder()).get().getChromosomes().get(0).getValue();
+	}
+	
+	public double getBestFitnessInput2() {
+		return specimens.stream().max(Comparator.naturalOrder()).get().getChromosomes().get(1).getValue();
 	}
 
 	public void spawnNextGeneration() {
