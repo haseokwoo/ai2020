@@ -8,8 +8,8 @@ public class Perceptron {
 	private List<Boolean> input = new ArrayList<>();
 	private List<Double> inputWeights = new ArrayList<>();
 	private double threshold = 1;
-	private double velocity = .2;
-	
+	private double velocity = .2; //300
+
 	public List<Boolean> getInput() {
 		return input;
 	}
@@ -27,8 +27,8 @@ public class Perceptron {
 	}
 
 	public boolean isFiring() {
-		int runningWeights = 0;
-		for (int n=0; n < input.size(); ++n) {
+		double runningWeights = 0;
+		for (int n = 0; n < input.size(); ++n) {
 			runningWeights += (input.get(n) ? 1 : 0) * inputWeights.get(n);
 		}
 		return runningWeights >= threshold;
@@ -45,27 +45,27 @@ public class Perceptron {
 	public void setVelocity(double velocity) {
 		this.velocity = velocity;
 	}
-	
+
 	public void addInput(boolean value) {
 		input.add(value);
 		inputWeights.add(DEFAULT_WEIGHT);
 	}
-	
+
 	public void addInput(boolean value, double weight) {
 		input.add(value);
 		inputWeights.add(weight);
 	}
-	
+
 	public void setInput(int index, boolean value) {
 		input.set(index, value);
 	}
-	
+
 	public void train() {
-		for (int n =0; n<input.size(); ++n) {
-			if(input.get(n)) {	//only strengthen connections that are firing
+		for (int n = 0; n < input.size(); ++n) {
+			if (input.get(n)) { // only strengthen connections that are firing
 				inputWeights.set(n, inputWeights.get(n) * (1 + velocity));
 			}
 		}
 	}
-	
+
 }
