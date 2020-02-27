@@ -60,4 +60,12 @@ public class Perceptron {
 		input.set(index, value);
 	}
 	
+	public void train() {
+		for (int n =0; n<input.size(); ++n) {
+			if(input.get(n)) {	//only strengthen connections that are firing
+				inputWeights.set(n, inputWeights.get(n) * (1 + velocity));
+			}
+		}
+	}
+	
 }
